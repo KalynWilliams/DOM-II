@@ -51,12 +51,17 @@ document.addEventListener('keydown', (event) => {
  }));
 
  //resize
-// turn body blue on resize
-window.addEventListener('resize', i => {
+// turn nav bar and footer blue
+window.addEventListener('resize', event => {
     body.style.backgroundColor = 'lightblue';
 })
 
+window.addEventListener("resize", event => {
+  const footer = document.querySelector("footer");
+  footer.style.backgroundColor = "lightblue";
+});
 // click
+//boxes around anchors
 const anchor = document.querySelectorAll("a");
 anchor.forEach(a => (a.style.padding = "10px"));
 anchor.forEach(a => {
@@ -64,3 +69,25 @@ anchor.forEach(a => {
     event.target.style.backgroundColor = "#9eedcc";
   });
 });
+
+// Load
+//load window
+window.addEventListener("load", event => alert("Page loaded! Wowzers!"));
+
+
+//double click click
+//black border around bus img
+const destinationImg = document.querySelector("img");
+destinationImg.addEventListener( "dblclick", event => (destinationImg.style.border = "2px solid black")
+);
+
+//scroll
+//change nav bar pink when scroll
+window.addEventListener(
+  "scroll",
+  function() {
+    const header = document.querySelector(".main-navigation");
+    header.style.backgroundColor = " #ffc4c4";
+    body.style.color = "white";
+  },
+);
