@@ -13,6 +13,7 @@ anchors.forEach(e => e.addEventListener('mouseover',(event) => {
 const body = document.querySelector('header');
 document.addEventListener('keydown', (event) => {
     body.style.backgroundColor = '#FFEBCD';
+    body.style.color = 'black';
 
  });
 
@@ -23,6 +24,7 @@ document.addEventListener('keydown', (event) => {
      event.preventDefault();
      event.currentTarget.style.fontSize = '10rem';
  });
+
 // drag and drop
  const introImg = document.querySelector('.intro img');
  const goImg = document.querySelector('.img-content img');
@@ -41,3 +43,24 @@ document.addEventListener('keydown', (event) => {
      body.style.backgroundColor = 'pink';
      body.style.color = 'white';
  });
+
+ //focus
+ // turn anchors white on focus
+ anchors.forEach(e => e.addEventListener('focus',(event) => {
+     event.currentTarget.style.color = 'white';
+ }));
+
+ //resize
+// turn body blue on resize
+window.addEventListener('resize', i => {
+    body.style.backgroundColor = 'lightblue';
+})
+
+// click
+const anchor = document.querySelectorAll("a");
+anchor.forEach(a => (a.style.padding = "10px"));
+anchor.forEach(a => {
+  a.addEventListener("click", event => {
+    event.target.style.backgroundColor = "#9eedcc";
+  });
+});
